@@ -1,0 +1,10 @@
+# Build artifacts
+build*/
+
+# IDE configs
+.vscode/
+.idea/
+
+# OS extras
+.DS_Store
+
