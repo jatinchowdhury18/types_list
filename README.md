@@ -1,5 +1,11 @@
 # types_list
 
+[![Tests (Ubuntu)](https://github.com/jatinchowdhury18/RTNeural/workflows/Tests/badge.svg)](https://github.com/jatinchowdhury18/types_list/actions/workflows/ubuntu.yml)
+[![Tests (Mac)](https://github.com/jatinchowdhury18/RTNeural/workflows/Tests/badge.svg)](https://github.com/jatinchowdhury18/types_list/actions/workflows/macos.yml)
+[![Tests (Windows)](https://github.com/jatinchowdhury18/RTNeural/workflows/Tests/badge.svg)](https://github.com/jatinchowdhury18/types_list/actions/workflows/windows.yml)
+[![License](https://img.shields.io/github/license/Neargye/nameof.svg)](LICENSE)
+[![Compiler explorer](https://img.shields.io/badge/compiler_explorer-online-blue.svg)](https://godbolt.org/z/s_ecko)
+
 A types_list template object for C++17 and later.
 
 ## Features
