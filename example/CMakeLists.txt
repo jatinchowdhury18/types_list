@@ -20,4 +20,3 @@ function(make_example target)
 endfunction()
 
 make_example(example)
-

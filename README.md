@@ -73,4 +73,3 @@ CPMAddPackage(
 ## License
 
 `types_list` is licensed under the MIT license. Enjoy!
-

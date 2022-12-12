@@ -5,6 +5,5 @@ build*/
 .vscode/
 .idea/
 
-# OS extras
+# Mac extras
 .DS_Store
-

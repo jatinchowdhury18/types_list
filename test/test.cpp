@@ -74,4 +74,3 @@ TEST_CASE ("Types List Test")
         static_assert (std::is_same_v<types_list::TypesList<int, float>::Types, std::tuple<int, float>>);
     }
 }
-
