@@ -4,13 +4,8 @@ project(types_list VERSION "0.1.0" LANGUAGES CXX)
 
 if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
     set(IS_TOPLEVEL_PROJECT TRUE)
-    set(CMAKE_CXX_STANDARD 17)
 else()
     set(IS_TOPLEVEL_PROJECT FALSE)
-endif()
-
-if(${CMAKE_CXX_STANDARD} LESS 17)
-    message(FATAL_ERROR "types_list requires C++ 17 or later")
 endif()
 
 option(TYPESLIST_OPT_BUILD_EXAMPLES "Build types_list examples" ${IS_TOPLEVEL_PROJECT})
