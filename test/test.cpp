@@ -31,7 +31,7 @@ TEST_CASE ("Types List Test")
 
         static constexpr auto typeNames = [] {
             std::array<std::string_view, List::count> names {};
-            types_list::ForEach<List>::doForEach (
+            types_list::forEach<List> (
                 [&names] (auto index) {
                     names[index] = List::AtIndex<index>::name;
                 });

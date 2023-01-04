@@ -4,7 +4,7 @@
 [![Tests (Mac)](https://github.com/jatinchowdhury18/types_list/workflows/macos/badge.svg)](https://github.com/jatinchowdhury18/types_list/actions/workflows/macos.yml)
 [![Tests (Windows)](https://github.com/jatinchowdhury18/types_list/workflows/windows/badge.svg)](https://github.com/jatinchowdhury18/types_list/actions/workflows/windows.yml)
 [![License](https://img.shields.io/github/license/Neargye/nameof.svg)](LICENSE)
-[![Compiler explorer](https://img.shields.io/badge/compiler_explorer-online-blue.svg)](https://godbolt.org/z/4xa4Ez863)
+[![Compiler explorer](https://img.shields.io/badge/compiler_explorer-online-blue.svg)](https://godbolt.org/z/dsz9GzzP6)
 
 A types_list template object for C++17 and later.
 
@@ -49,7 +49,7 @@ A types_list template object for C++17 and later.
   ```cpp
   // Print the epsilon value for different floating point types:
   using List = types_list::TypesList<float, double, long double>;
-  types_list::ForEach<List>::doForEach([] (auto typeIndex) {
+  types_list::forEach<List>([] (auto typeIndex) {
       using TypeAtIndex = List::AtIndex<typeIndex>;
       std::cout << std::numeric_limits<TypeAtIndex>::epsilon() << std::endl;
   });

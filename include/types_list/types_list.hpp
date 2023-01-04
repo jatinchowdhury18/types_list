@@ -74,23 +74,15 @@ struct TypesList
 template <typename TupleType>
 using TupleList = typename detail::TupleHelpers<TypesList<>, TupleType>::TupleTypesList;
 
-/** Can be used to call a static function for every type in a type list */
-template <typename TypesList, size_t typeIndex = 0, size_t numTypesLeft = TypesList::count>
-struct ForEach
+/** Can be used to call a lambda for every type in a type list */
+template<typename TypesList, typename ForEachAction, size_t typeIndex = 0, size_t numTypesLeft = TypesList::count>
+static constexpr void forEach (ForEachAction&& forEachAction)
 {
-    template <typename ForEachAction>
-    static constexpr void doForEach (ForEachAction&& forEachAction)
+    if constexpr (numTypesLeft > 0)
     {
-        forEachAction (std::integral_constant<std::size_t, typeIndex>());
-        ForEach<TypesList, typeIndex + 1, numTypesLeft - 1>::doForEach (std::forward<ForEachAction> (forEachAction));
+        forEachAction(std::integral_constant<std::size_t, typeIndex>());
+        forEach<TypesList, ForEachAction, typeIndex + 1, numTypesLeft - 1>(std::forward<ForEachAction>(forEachAction));
     }
-};
-
-template <typename TypesList, size_t typeIndex>
-struct ForEach<TypesList, typeIndex, 0>
-{
-    template <typename ForEachAction>
-    static constexpr void doForEach (ForEachAction&&) {}
-};
+}
 }
 
