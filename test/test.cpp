@@ -76,8 +76,8 @@ TEST_CASE ("Types List Test")
 
     SECTION ("IndexOf Test")
     {
-        static_assert (types_list::TypesList<int, float>::IndexOf<int> == 0);
-        static_assert (types_list::TypesList<int, float>::IndexOf<float> == 1);
-        static_assert (types_list::TypesList<int, float>::IndexOf<double> == -1);
+        static_assert (types_list::TypesList<int, float>::IndexOf<int> == (int) 0);
+        static_assert (types_list::TypesList<int, float>::IndexOf<float> == (int) 1);
+        static_assert (types_list::TypesList<int, float>::IndexOf<double> == (int) -1);
     }
 }

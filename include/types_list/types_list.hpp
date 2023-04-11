@@ -81,7 +81,7 @@ struct TypesList
 
     /** Returns the index of a given type in the list. Returns -1 if the type is not present in the list. */
     template <typename T>
-    static constexpr auto IndexOf = detail::indexOf<TypesList, T>();
+    static constexpr int IndexOf = detail::indexOf<TypesList, T>();
 
     /** True if the argument type is present in the list. */
     template <typename T>
