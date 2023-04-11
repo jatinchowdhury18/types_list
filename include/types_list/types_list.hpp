@@ -59,7 +59,7 @@ namespace detail
             {
                 using TypeAtIndex = typename TypesList::template AtIndex<typeIndex>;
                 if constexpr (std::is_same_v<Type, TypeAtIndex>)
-                    result = typeIndex;
+                    result = (int) typeIndex;
             });
         return result;
     }
