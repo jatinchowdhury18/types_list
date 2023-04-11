@@ -73,4 +73,11 @@ TEST_CASE ("Types List Test")
         static_assert (std::is_same_v<types_list::TypesList<int, float>, types_list::TupleList<std::tuple<int, float>>>);
         static_assert (std::is_same_v<types_list::TypesList<int, float>::Types, std::tuple<int, float>>);
     }
+
+    SECTION ("IndexOf Test")
+    {
+        static_assert (types_list::TypesList<int, float>::IndexOf<int> == 0);
+        static_assert (types_list::TypesList<int, float>::IndexOf<float> == 1);
+        static_assert (types_list::TypesList<int, float>::IndexOf<double> == -1);
+    }
 }
