@@ -103,4 +103,23 @@ struct TypesList
 /** Constructs a TypesList from a tuple */
 template <typename TupleType>
 using TupleList = typename detail::TupleHelpers<TypesList<>, TupleType>::TupleTypesList;
+
+namespace detail
+{
+    template <typename MaybeTypesList>
+    struct IsTypesListHelper
+    {
+        static constexpr bool value = false;
+    };
+
+    template <typename... Ts>
+    struct IsTypesListHelper<TypesList<Ts...>>
+    {
+        static constexpr bool value = true;
+    };
+} // namespace detail
+
+/** True if the template argument is a TypesList */
+template <typename MaybeTypesList>
+constexpr bool IsTypesList = detail::IsTypesListHelper<MaybeTypesList>::value;
 } // namespace types_list

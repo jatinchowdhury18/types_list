@@ -25,7 +25,7 @@ jobs:
         - { cc: "clang-13", cxx: "clang++-13" }
         - { cc: "clang-14", cxx: "clang++-14" }
         - { cc: "clang-15", cxx: "clang++-15" }
-        - { cc: "clang-16", cxx: "clang++-16" }
+#        - { cc: "clang-16", cxx: "clang++-16" }
 
     name: "${{matrix.compiler.cc}}"
     steps:
