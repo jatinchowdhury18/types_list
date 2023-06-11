@@ -1,5 +1,6 @@
 #pragma once
 
+#include <cstddef>
 #include <tuple>
 #include <type_traits>
 
@@ -122,4 +123,27 @@ namespace detail
 /** True if the template argument is a TypesList */
 template <typename MaybeTypesList>
 constexpr bool IsTypesList = detail::IsTypesListHelper<MaybeTypesList>::value;
+
+namespace detail
+{
+    template <typename T>
+    struct TypesWrapperHelper
+    {
+        using Types = T;
+    };
+
+    template <typename... Ts>
+    struct TypesWrapperHelper<TypesList<Ts...>>
+    {
+        using Types = typename TypesList<Ts...>::Types;
+    };
+}
+
+/**
+ * If the template argument is a TypesList, the aliased type will
+ * be a tuple containing all the types in the list. Otherwise the
+ * aliased type will be the same as the template argument.
+ */
+template <typename T>
+using TypesWrapper = typename detail::TypesWrapperHelper<T>::Types;
 } // namespace types_list

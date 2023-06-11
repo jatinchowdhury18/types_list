@@ -86,4 +86,10 @@ TEST_CASE ("Types List Test")
         static_assert (! types_list::IsTypesList<bool>);
         static_assert (types_list::IsTypesList<types_list::TypesList<bool, int>>);
     }
+
+    SECTION ("TypesWrapper Test")
+    {
+        static_assert (std::is_same_v<types_list::TypesWrapper<bool>, bool>);
+        static_assert (std::is_same_v<types_list::TypesWrapper<types_list::TypesList<bool, int>>, std::tuple<bool, int>>);
+    }
 }
